@@ -29,7 +29,7 @@ jobs:
       - name: Extract project
         run: |
           mkdir extracted
-          unzip -q "$(find . -maxdepth 1 -name '*.zip' | head -1)" -d extracted
+          unzip -q "$(find . -maxdepth 1 -name '*V0.2*.zip' -print -quit)" -d extracted
           PROJECT_DIR=$(dirname "$(find extracted -name settings.gradle.kts -print -quit)")
           echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
 
